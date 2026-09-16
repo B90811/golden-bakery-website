@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Golden Bakery, Lodhi Road, New Delhi — cakes, pastries, bakery treats and sandwiches.">
+
+    <meta name="theme-color" content="#24150f">
+
+    <title>Golden Bakery | Cakes, Bakes & More</title>
+
+    <style>
+        /* =========================
+       GLOBAL
+    ========================== */
+
+        :root {
+            --ink: #24150f;
+            --cream: #fffaf2;
+            --gold: #d79a2b;
+            --gold-light: #f3c968;
+            --brown: #6e3e25;
+            --muted: #76685e;
+            --white: #ffffff;
+            --line: #eadfce;
+            --shadow: 0 18px 50px rgba(48, 29, 18, 0.12);
+            --radius: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.55;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+
+        /* =========================
+       TOP BAR
+    ========================== */
+
+        .topbar {
+            background: var(--ink);
+            color: white;
+            padding: 9px 0;
+            font-size: 13px;
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+
+        /* =========================
+       NAVBAR
+    ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 250, 242, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .navin {
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .brand span {
+            color: var(--gold);
+        }
+
+        .links {
+            display: flex;
+            gap: 28px;
+            font-weight: 650;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            color: var(--gold);
+        }
+
+        .navcta {
+            background: var(--ink);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 750;
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+       HERO
+    ========================== */
+
+        .hero {
+            padding: 70px 0 55px;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.03fr 0.97fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff2d1;
+            color: #805514;
+            padding: 8px 13px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(44px, 6vw, 76px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            max-width: 680px;
+        }
+
+        h1 em {
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 590px;
+            margin: 22px 0 28px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 15px 22px;
+            border-radius: 999px;
+            font-weight: 800;
+            border: 1px solid var(--ink);
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary {
+            background: var(--ink);
+            color: white;
+        }
+
+        .secondary {
+            background: white;
+        }
+
+        .trust {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .trust strong {
+            color: var(--ink);
+        }
+
+        .hero-photo {
+            height: 540px;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .hero-photo:after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 45%;
+            background: linear-gradient(transparent,
+                    rgba(24, 12, 7, 0.65));
+        }
+
+        .hero-label {
+            position: absolute;
+            left: 24px;
+            bottom: 22px;
+            color: white;
+            z-index: 2;
+            font-weight: 800;
+        }
+
+        .hero-label small {
+            display: block;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+       SECTIONS
+    ========================== */
+
+        section {
+            padding: 82px 0;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .kicker {
+            color: #a46d13;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.05;
+            margin-top: 8px;
+            letter-spacing: -1.5px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            max-width: 450px;
+        }
+
+
+        /* =========================
+       PRODUCT CARDS
+    ========================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(48, 29, 18, 0.06);
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-img {
+            height: 230px;
+        }
+
+        .card-body {
+            padding: 21px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .price {
+            display: inline-block;
+            margin-top: 12px;
+            color: #93610e;
+            font-weight: 900;
+        }
+
+
+        /* =========================
+       WHY SECTION
+    ========================== */
+
+        .why {
+            background: var(--ink);
+            color: white;
+        }
+
+        .why .section-head p {
+            color: #d8c9bd;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .why-card {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 22px;
+        }
+
+        .why-card .icon {
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
+
+        .why-card p {
+            color: #d8c9bd;
+            font-size: 14px;
+            margin-top: 7px;
+        }
+
+
+        /* =========================
+       GALLERY
+    ========================== */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr 0.75fr;
+            grid-auto-rows: 220px;
+            gap: 14px;
+        }
+
+        .gallery .g {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .gallery .big {
+            grid-row: span 2;
+        }
+
+        .gallery .wide {
+            grid-column: span 2;
+        }
+
+
+        /* =========================
+       INFO
+    ========================== */
+
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .info-box {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 30px;
+        }
+
+        .info-box h3 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 12px;
+            color: var(--muted);
+        }
+
+        .info-list strong {
+            color: var(--ink);
+        }
+
+
+        /* =========================
+       CTA
+    ========================== */
+
+        .cta {
+            padding: 0 0 82px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg,
+                    #f3d486,
+                    #d79a2b);
+
+            border-radius: 30px;
+            padding: 45px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .cta-box h2 {
+            max-width: 600px;
+        }
+
+
+        /* =========================
+       FOOTER
+    ========================== */
+
+        footer {
+            background: #170d09;
+            color: #d8c9bd;
+            padding: 35px 0;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tiny {
+            font-size: 13px;
+        }
+
+
+        /* =========================
+       FLOATING CALL BUTTON
+    ========================== */
+
+        .float-call {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 30;
+
+            background: var(--ink);
+            color: white;
+
+            padding: 15px 19px;
+            border-radius: 999px;
+
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+
+            font-weight: 850;
+        }
+
+
+        /* =========================
+       TABLET
+    ========================== */
+
+        @media (max-width: 850px) {
+
+            .links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .navcta {
+                padding: 10px 15px;
+            }
+
+            .hero-grid,
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 42px;
+            }
+
+            .hero-photo {
+                height: 430px;
+            }
+
+            .cards,
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 190px;
+            }
+
+            .gallery .big {
+                grid-row: span 2;
+            }
+
+            .gallery .wide {
+                grid-column: span 2;
+            }
+
+            .cta-box {
+                padding: 32px;
+                display: block;
+            }
+
+            .cta-box .btn {
+                margin-top: 18px;
+            }
+        }
+
+
+        /* =========================
+       MOBILE
+    ========================== */
+
+        @media (max-width: 560px) {
+
+            .topbar .container {
+                display: block;
+                text-align: center;
+            }
+
+            .topbar .container span+span {
+                display: none;
+            }
+
+            .brand {
+                font-size: 23px;
+            }
+
+            .navin {
+                height: 64px;
+            }
+
+            h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-photo {
+                height: 360px;
+            }
+
+            .cards,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 230px;
+            }
+
+            .gallery .big,
+            .gallery .wide {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .section-head p {
+                margin-top: 14px;
+            }
+
+            .cta-box {
+                padding: 27px;
+            }
+
+            .float-call {
+                right: 12px;
+                bottom: 12px;
+            }
+        }
+
+
+        /* =========================
+       MOBILE MENU
+    ========================== */
+
+        @media (max-width: 850px) {
+
+            .links.mobile {
+                display: flex;
+
+                position: absolute;
+
+                left: 0;
+                right: 0;
+                top: 64px;
+
+                background: var(--cream);
+
+                padding: 18px 4%;
+
+                border-bottom: 1px solid var(--line);
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+       TOP BAR
+  ========================== -->
+
+    <div class="topbar">
+
+        <div class="container">
+
+            <span>
+                📍 Lodhi Road, New Delhi
+            </span>
+
+            <span>
+                ☎ 098108 78661
+                &nbsp; • &nbsp;
+                Bakery & Cake
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+    <nav>
+
+        <div class="container navin">
+
+            <a class="brand" href="#">
+                Golden <span>Bakery</span>
+            </a>
+
+
+            <div class="links">
+
+                <a href="#specialties">
+                    Specialties
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#visit">
+                    Visit Us
+                </a>
+
+            </div>
+
+
+            <a class="navcta" href="tel:+919810878661">
+
+                Call Now
+
+            </a>
+
+
+            <button class="menu-btn" aria-label="Open menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <main>
+
+
+        <!-- =========================
+         HERO
+    ========================== -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <div>
+
+                    <div class="eyebrow">
+
+                        ★ 4.0 rating
+                        · 1,354 Google reviews
+
+                    </div>
+
+
+                    <h1>
+
+                        Fresh bakes for
+
+                        <em>
+                            every celebration.
+                        </em>
+
+                    </h1>
+
+
+                    <p>
+
+                        Golden Bakery brings together
+                        cakes, bakery favourites,
+                        sweet treats and savoury bites
+                        at Lodhi Road, New Delhi.
+
+                    </p>
+
+
+                    <div class="actions">
+
+                        <a class="btn primary" href="tel:+919810878661">
+
+                            ☎ Call Golden Bakery
+
+                        </a>
+
+
+                        <a class="btn secondary" href="#specialties">
+
+                            Explore Favourites ↓
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="trust">
+
+                        <span>
+
+                            <strong>
+                                ₹1–₹1,000
+                            </strong>
+
+                            per person*
+
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                Open
+                            </strong>
+
+                            · closes 9:30 PM*
+
+                        </span>
+
+
+                        <span>
+
+                            <strong>
+                                10 min
+                            </strong>
+
+                            typical visit*
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-photo">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm-6m_-8JgCRNWrlTe4XlVFccqxoYCSjxm3RNil_RNHRBDgZMfDeiVe6-6&s=10" alt="Golden Bakery cakes and bakery display">
+
+                    <div class="hero-label">
+
+                        Cakes, pastries & bakery treats
+
+                        <small>
+                            Made for everyday cravings and celebrations
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         SPECIALTIES
+    ========================== -->
+
+        <section id="specialties">
+
+            <div class="container">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="kicker">
+                            Menu highlights
+                        </div>
+
+                        <h2>
+                            Customer favourites
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+
+                        Featured items visible in
+                        Golden Bakery's Google menu highlights.
+                        Availability and prices can change.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="cards">
+
+
+                    <!-- Chicken Sandwich -->
+
+                    <article class="card">
+
+                        <div class="card-img">
+
+                            <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Grilled-Chicken-Sandwich.jpg" alt="Chicken sandwich">
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3>
+                                Chicken Sandwich
+                            </h3>
+
+                            <p>
+
+                                A savoury bakery bite
+                                featured among the shop's
+                                menu highlights.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Red Velvet -->
+
+                    <article class="card">
+
+                        <div class="card-img">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReSf1KGRQk1urnNi3cZ2FgcT9TWYSgUnsiDl4JYKYoBZ_K1Izca-Wmir0y&s=10" alt="Red velvet cake">
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3>
+                                Red Velvet Cake
+                            </h3>
+
+                            <p>
+
+                                A celebration-ready cake
+                                featured in Golden Bakery's
+                                menu highlights.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Fruit Cake -->
+
+                    <article class="card">
+
+                        <div class="card-img">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEilEgbNxLgbYs-9uyVyL8WFv1pNKA--Jxcak_OL3iwOcmRxYERMxTPns-&s=10" alt="Fruit cake">
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3>
+                                Fruit Cake
+                            </h3>
+
+                            <p>
+
+                                A fruit-topped cake option
+                                shown in the bakery's
+                                menu highlights.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Chocolate Truffle -->
+
+                    <article class="card">
+
+                        <div class="card-img">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwCnHb8zx7ekHtKaFfOz1uQTxUfE0KR7LZb2dsxam-J4hRBWTqIpa5HJk&s=10" alt="Chocolate truffle cake">
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3>
+                                Chocolate Truffle Cake
+                            </h3>
+
+                            <p>
+
+                                A chocolate cake option
+                                shown in the bakery's
+                                menu highlights.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Mango Cake -->
+
+                    <article class="card">
+
+                        <div class="card-img">
+
+                            <img src="https://bakewithshivesh.com/wp-content/uploads/2021/04/IMG_3973-scaled.jpg" alt="Mango cake">
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3>
+                                Mango Cake
+                            </h3>
+
+                            <p>
+
+                                A mango-flavoured cake
+                                featured in the menu highlights.
+
+                            </p>
+
+
+                            <span class="price">
+
+                                ₹400 shown in listing
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Jelly Cake -->
+
+                    <article class="card">
+
+                        <div class="card-img">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGuqwdZAC3geRydyC6qNXpE5cyyhq_LL13vZhPWxvZcToF9A_6CkDFwYo&s=10" alt="Jelly cake">
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3>
+                                Jelly Cake
+                            </h3>
+
+                            <p>
+
+                                A colourful jelly-topped cake
+                                shown among the bakery's
+                                featured items.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         WHY VISIT
+    ========================== -->
+
+        <section class="why">
+
+            <div class="container">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="kicker">
+                            Why visit
+                        </div>
+
+                        <h2>
+                            Something for every occasion.
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+
+                        Cakes and bakery favourites
+                        for celebrations, cravings
+                        and everyday treats.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-grid">
+
+
+                    <div class="why-card">
+
+                        <div class="icon">
+                            🎂
+                        </div>
+
+                        <h3>
+                            Celebration Cakes
+                        </h3>
+
+                        <p>
+
+                            Red velvet, chocolate truffle,
+                            mango, jelly and other cake
+                            styles are featured in the listing.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="why-card">
+
+                        <div class="icon">
+                            🥪
+                        </div>
+
+                        <h3>
+                            Savoury Bites
+                        </h3>
+
+                        <p>
+
+                            Chicken sandwich is among
+                            the menu highlights shown
+                            for the bakery.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="why-card">
+
+                        <div class="icon">
+                            🍰
+                        </div>
+
+                        <h3>
+                            Bakery Favourites
+                        </h3>
+
+                        <p>
+
+                            Browse cakes and bakery treats
+                            in-store and ask about today's
+                            available selection.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         GALLERY
+    ========================== -->
+
+        <section id="gallery">
+
+            <div class="container">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="kicker">
+                            From the bakery
+                        </div>
+
+                        <h2>
+                            See what's on display
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+
+                        A glimpse of the cakes
+                        and bakery selection.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="gallery">
+
+
+                    <div class="g big">
+
+                        <img src="assets/bakery-2.jpg" alt="Golden Bakery display counter">
+
+                    </div>
+
+
+                    <div class="g">
+
+                        <img src="assets/bakery-3.jpg" alt="Fruit cake">
+
+                    </div>
+
+
+                    <div class="g">
+
+                        <img src="assets/bakery-4.jpg" alt="Chocolate truffle cake">
+
+                    </div>
+
+
+                    <div class="g wide">
+
+                        <img src="assets/bakery-5.jpg" alt="Mango cake">
+
+                    </div>
+
+
+                    <div class="g">
+
+                        <img src="assets/bakery-6.jpg" alt="Jelly cake">
+
+                    </div>
+
+
+                    <div class="g">
+
+                        <img src="assets/bakery-7.jpg" alt="Golden Bakery cake selection">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         VISIT US
+    ========================== -->
+
+        <section id="visit">
+
+            <div class="container">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="kicker">
+                            Find us
+                        </div>
+
+                        <h2>
+                            Visit Golden Bakery
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+
+                        Located in New Khanna Market
+                        on Lodhi Road, Lodi Colony.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="info">
+
+
+                    <!-- Store details -->
+
+                    <div class="info-box">
+
+                        <h3>
+                            Store details
+                        </h3>
+
+
+                        <div class="info-list">
+
+
+                            <div>
+
+                                📍
+
+                                <strong>
+                                    Address
+                                </strong>
+
+                                <br>
+
+                                101, Lodhi Rd,
+                                New Khanna Market,
+                                Lodhi Road Quarters,
+                                Lodi Colony,
+                                New Delhi,
+                                Delhi 110003
+
+                            </div>
+
+
+
+                            <div>
+
+                                ☎
+
+                                <strong>
+                                    Phone
+                                </strong>
+
+                                <br>
+
+                                <a href="tel:+919810878661">
+
+                                    098108 78661
+
+                                </a>
+
+                            </div>
+
+
+
+                            <div>
+
+                                🕘
+
+                                <strong>
+                                    Hours
+                                </strong>
+
+                                <br>
+
+                                Open · closes 9:30 PM*
+
+                            </div>
+
+
+
+                            <div>
+
+                                ⭐
+
+                                <strong>
+                                    Google rating
+                                </strong>
+
+                                <br>
+
+                                4.0 · 1,354 reviews
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Order -->
+
+                    <div class="info-box">
+
+                        <h3>
+                            Ready to order or ask?
+                        </h3>
+
+
+                        <p style="color:var(--muted);margin-bottom:20px">
+
+                            Call the bakery directly for
+                            current availability, cake options,
+                            prices and order details.
+
+                        </p>
+
+
+                        <div class="actions">
+
+
+                            <a class="btn primary" href="tel:+919810878661">
+
+                                ☎ Call Now
+
+                            </a>
+
+
+
+                            <a class="btn secondary" target="_blank" rel="noopener"
+                                href="https://www.google.com/maps/search/?api=1&query=Golden+Bakery%2C+101+Lodhi+Road%2C+New+Khanna+Market%2C+Lodi+Colony%2C+New+Delhi+110003">
+
+                                📍 Get Directions
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+         CTA
+    ========================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+
+                <div class="cta-box">
+
+
+                    <div>
+
+                        <div class="kicker" style="color:#5d3a05">
+
+                            Golden Bakery · Lodhi Road
+
+                        </div>
+
+
+                        <h2>
+
+                            Planning a celebration?
+                            Start with a cake.
+
+                        </h2>
+
+                    </div>
+
+
+
+                    <a class="btn primary" href="tel:+919810878661">
+
+                        Call to Enquire
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div>
+
+                <strong style="color:white">
+
+                    Golden Bakery
+
+                </strong>
+
+
+                <div class="tiny">
+
+                    Bakery & Cake ·
+                    Lodhi Road, New Delhi
+
+                </div>
+
+            </div>
+
+
+            <div class="tiny">
+
+                *Listing details shown in the
+                supplied screenshots; verify current
+                hours, prices and availability
+                with the bakery.
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+       FLOATING CALL
+  ========================== -->
+
+    <a class="float-call" href="tel:+919810878661">
+
+        ☎ Call
+
+    </a>
+
+
+
+    <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+    <script>
+
+        const menuButton =
+            document.querySelector(".menu-btn");
+
+        const links =
+            document.querySelector(".links");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                links.classList.toggle("mobile");
+
+            }
+        );
+
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(
+            ".links a"
+        ).forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    links.classList.remove("mobile");
+
+                }
+            );
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
